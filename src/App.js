@@ -6,11 +6,6 @@ import {Button, Container,} from "semantic-ui-react";
 
 class App extends React.Component{
   state = {
-    // ballx: 0,
-    // bally: 10,
-    // dx: 5,
-    // dy: 4,
-
     showData: false,
   }
 
@@ -22,7 +17,6 @@ class App extends React.Component{
 
 
   render(){
-    const {ballx, bally, dx, dy} = this.state
     return(
       <Container  style={styles}>
         {this.state.showData && <Animations/>}
