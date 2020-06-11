@@ -11,7 +11,7 @@ class Animations extends React.Component{
    componentDidMount(){
      this.ticker = setInterval(() =>{
        this.tick()
-     },8)
+     },50)
    }
 
   tick() {
@@ -29,31 +29,31 @@ class Animations extends React.Component{
   componentDidUpdate(prevProps, prevState) {
     if(prevState.ballx > length - ballSize){
       this.setState({
-        dx: -5,
+        dx: -30,
         ballx: length - ballSize
       })
     }
 
-    if(prevState.ballx < 1) {
+    if(prevState.ballx < 2) {
       this.setState({
-        dx:5,
-        ballx: 30,
+        dx: 30,
+        ballx: 2,
       })
     }
 
-    // if(prevState.bally > length - ballSize){
-    //   this.setState({
-    //     dy: -4,
-    //     bally: length - ballSize
-    //   })
-    // }
+    if(prevState.bally > length - ballSize){
+      this.setState({
+        dy: -49,
+        bally: length - ballSize
+      })
+    }
 
-    // if(prevState.bally < 1){
-    //   this.setState({
-    //     dy: 4,
-    //     bally: 10,
-    //   })
-    // }
+    if(prevState.bally < 2){
+      this.setState({
+        dy: 49,
+        bally: 2,
+      })
+    }
   }
 
   render() {
@@ -66,6 +66,8 @@ class Animations extends React.Component{
         <div style={{...ballStyles2, right: bally, bottom: ballx}}></div>
         <div style={{...ballStyles2, bottom: bally, right: ballx}}></div>
         <div style={{...ballStyles2, bottom: bally, left: ballx}}></div>
+        <div style={{...ballStyles2, right: bally, top: ballx}}></div>
+
 
       </div>
     )
